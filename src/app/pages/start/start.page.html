@@ -1,0 +1,52 @@
+
+<ion-content scroll-y="false">
+
+  <ion-row >
+    <img src="/assets/svg/logo_white.svg">
+    <span>Conviértete en un <br> 
+      <strong>Inversionista Digital</strong>
+    </span>
+</ion-row>
+  
+  <ion-grid *ngIf=" stepView === 'homeView' ">
+
+    <!-- <ion-row>
+      <img src="/assets/svg/logo_white.svg">
+      <?xml version="1.0" encoding="UTF-8"?>
+    </ion-row> -->
+
+    <section>
+      <!-- <ion-row class="bottom-32"> 
+        <span>Conviértete en un <br> 
+          <strong>Inversionista Digital</strong>
+        </span>
+      </ion-row> -->
+  
+      <ion-row class="bottom-16">
+        <ion-button mode="ios" expand="block" (click)="changeOptionView('loginView')">Iniciar sesión</ion-button>
+      </ion-row>
+  
+      <ion-row>
+        <ion-button mode="ios" fill="outline" color="light" (click)="changeOptionView('registryView')">Crear Cuenta</ion-button>
+      </ion-row>
+    </section>
+
+    <ion-row class="botom-text">
+      <ion-button fill="clear">Ver Demo</ion-button>
+    </ion-row>
+
+  </ion-grid>
+
+   <app-login   *ngIf=" stepView === 'loginView' " 
+                [stepView]="stepView"
+                (backStepView)="stepView = $event"></app-login>
+
+   <app-sign-in *ngIf=" stepView === 'registryView' " 
+                [stepView]="stepView"
+                (backStepView)="stepView = $event"></app-sign-in>
+
+    <app-two-factor-auth  *ngIf=" stepView === 'twoFactor' "
+                          [stepView]="stepView"
+                          (backStepView)="stepView = $event"></app-two-factor-auth>
+
+</ion-content>

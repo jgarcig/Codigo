@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ai-digital-archetype",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

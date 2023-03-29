@@ -1,0 +1,67 @@
+
+<ion-grid *ngIf="isLoading">
+  <ion-spinner name="dots" color="secondary"></ion-spinner>
+</ion-grid>
+
+<ion-grid *ngIf="!isLoading">
+
+  <!-- <ion-row>
+    <img src="/assets/svg/logo_white.svg">
+    <?xml version="1.0" encoding="UTF-8"?>
+  </ion-row> -->
+
+  <form [formGroup]="signInForm" (ngSubmit)="submitForm()">
+    <ion-row class="bottom-16"> 
+      <span>Crea tu cuenta</span>
+    </ion-row>
+
+    <ion-list class="bottom-32">
+
+      <ion-item mode="md">
+        <ion-select formControlName="rfcType" placeholder="Tipo de persona" interface="popover" color="secondary">
+          <ion-select-option value="Persona Moral" color="secondary">Persona Moral</ion-select-option>
+          <ion-select-option value="Persona Física" color="secondary">Persona Física</ion-select-option>
+          <ion-select-option value="Otro" color="secondary">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Correo electrónico</ion-label>
+        <ion-input formControlName="email" type="email" class="custom"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Usuario</ion-label>
+        <ion-input formControlName="user" type="text" class="custom"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password" class="custom"></ion-input>
+      </ion-item>
+      <!-- <ion-icon name="information-circle-outline" color="secondary"></ion-icon> -->
+
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Repetir contraseña</ion-label>
+        <ion-input formControlName="confirmPass" type="password" class="custom"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Número celular</ion-label>
+        <ion-input formControlName="phone" type="number" class="custom"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-row>
+      <!-- <ion-button mode="ios" expand="block" type="submit">Crear cuenta</ion-button> -->
+      <ion-button mode="ios" expand="block" type="submit" [disabled]="!signInForm.valid">Crear cuenta</ion-button>
+    </ion-row>
+
+  </form>
+
+  <ion-row>
+    <ion-button mode="ios" fill="clear" (click)="backToInitView()">Regresar</ion-button>
+  </ion-row>
+
+</ion-grid>

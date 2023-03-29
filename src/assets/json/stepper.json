@@ -1,0 +1,22 @@
+[
+    {
+      "status":"1",
+      "texto":"Datos personales"
+    },
+    {
+      "status":"2",
+      "texto":"Domicilio"
+    },
+    {
+      "status":"3",
+      "texto":"Actividad Economica"
+    },
+    {
+      "status":"4",
+      "texto":"Documentos"
+    },
+    {
+      "status":"5",
+      "texto":"Confirmacion"
+    }
+]

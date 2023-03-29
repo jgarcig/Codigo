@@ -1,0 +1,45 @@
+<ion-grid fixed>
+
+  <ion-row>
+    <!-- columna para la imagen -->
+    <ion-col size="4">
+      <img  src="https://lovestylecomunicacion.com/wp-content/uploads/2018/01/IVM1.png">
+    </ion-col>
+
+    <!-- columna para el titulo y el stepper -->
+    <ion-col size="8">
+
+      <!-- row para el titulo y stepper -->
+      <ion-row>
+        <ion-col size="12" id="titulo">
+          <strong>Bienvenido a <strong style="color:  var(--ion-color-blue-btn);">ai / digital </strong> </strong>
+          <p>Antes de comenzar a invertir es indispensable que nos comparta la siguiente información para que podamos
+            darte de alta como cliente y validar tu información</p>
+        </ion-col>
+        <!-- stepper -->
+        <ion-col size="12">
+          <div>
+            <div class="wrapper-progressBar">
+              <ul class="progressBar">
+                <li *ngFor="let item of stepper; let i = index" id="{{ 'custom' + i }}">
+                  {{item.texto}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <!-- row para los formularios -->
+      <div>
+        <app-form-personal-data-web *ngIf="indexglobal === 0"></app-form-personal-data-web>
+        <app-form-address-data-web *ngIf="indexglobal === 1"></app-form-address-data-web>
+        <app-form-finance-data-web *ngIf="indexglobal === 2"></app-form-finance-data-web>
+        <app-form-documents-data-web *ngIf="indexglobal === 3"></app-form-documents-data-web>
+        <app-form-confirm-data-web *ngIf="indexglobal === 4"></app-form-confirm-data-web>
+      </div>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<!-- fotter para los boones? -->

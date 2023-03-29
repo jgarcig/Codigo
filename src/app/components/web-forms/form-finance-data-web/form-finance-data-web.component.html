@@ -1,0 +1,98 @@
+<ion-grid  id="iniciar" *ngIf="isLoading">
+  <ion-spinner name="dots" color="secondary"></ion-spinner>
+</ion-grid>
+
+<ion-grid *ngIf="!isLoading" fixed>
+
+  <form [formGroup]="financeForm" (ngSubmit)="submitFinanceDataForm()">
+
+    <ion-row>
+      <h4>Ingresos</h4>
+    </ion-row>
+    <ion-row>
+      <span> Ingresa la información solicitada a continuación con respecto a tus ingresos.</span>
+    </ion-row>
+
+    <ion-list>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Sueldo o Monto Anual Neto</ion-label>
+        <ion-input formControlName="salary" type="text" class="custom"
+          placeholder="Sueldo o Monto Anual Neto"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Actividad Principal</ion-label>
+        <ion-select formControlName="occupation" interface="popover" color="secondary">
+          <ion-select-option value="Ingeniería">Ingeniería</ion-select-option>
+          <ion-select-option value="Licenciatura">Licenciatura</ion-select-option>
+          <ion-select-option value="Otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Nombre Cliente/Entidad a la que se prestan servicios</ion-label>
+        <ion-input formControlName="jobName" type="text" class="custom"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Giro del Servicio</ion-label>
+        <ion-select formControlName="jobActivity" interface="popover">
+          <ion-select-option value="Tecnologías">Tecnologías</ion-select-option>
+          <ion-select-option value="Servicios">Servicios</ion-select-option>
+          <ion-select-option value="Otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Rango del Puesto</ion-label>
+        <ion-select formControlName="seniority" interface="popover" color="secondary">
+          <ion-select-option value="Junior">Junior</ion-select-option>
+          <ion-select-option value="Senior">Senior</ion-select-option>
+          <ion-select-option value="Otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item id="seniorityDate" mode="md" fill="outline">
+        <ion-label position="floating">Antigüedad</ion-label>
+        <ion-input formControlName="jobExperience" value="{{ date | date: 'dd/MM/yyyy' }}"></ion-input>
+        <ion-icon slot="end" name="calendar" color="secondary" mode="md"></ion-icon>
+        <ion-modal trigger="seniorityDate" [cssClass]="'bottom-end'">
+          <ng-template>
+            <ion-datetime formControlName="jobExperience" resentation="date" size="cover" name="date" [(ngModel)]="date"
+              [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Cargos Públicos</ion-label>
+        <ion-select formControlName="publicCharges" interface="popover" color="secondary">
+          <ion-select-option value="Si">Si</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">No. de Depositos a Realizar por Mes</ion-label>
+        <ion-input formControlName="numDepositosxMes" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Monto de cada Deposito en Pesos</ion-label>
+        <ion-input formControlName="montodeposito" type="number"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <section>
+      <ion-button id="seccionRegresar" shape="round" type="button" (click)="btnRegresar()" >regresar</ion-button> 
+    </section>
+    
+    <section>
+      <ion-button shape="round" type="submit" [disabled]="financeForm.valid">Siguiente</ion-button>
+    </section>
+
+  </form>
+
+</ion-grid>

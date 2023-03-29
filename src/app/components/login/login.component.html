@@ -1,0 +1,53 @@
+
+<ion-grid *ngIf="isLoading">
+  <ion-spinner name="dots" color="secondary"></ion-spinner>
+</ion-grid>
+
+<ion-grid *ngIf="!isLoading">
+
+    <!-- <ion-row >
+      <img src="/assets/svg/logo_white.svg">
+      <?xml version="1.0" encoding="UTF-8"?>
+    </ion-row> -->
+  
+    <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+      <ion-row class="bottom-16"> 
+        <span>Inicia Sesión</span>
+      </ion-row>
+
+      <ion-list class="bottom-32">
+  
+        <ion-item mode="md">
+          <ion-label position="floating" color="secondary">Usuario</ion-label>
+          <ion-input formControlName="email" type="email" class="custom"></ion-input>
+        </ion-item>
+  
+        <ion-item mode="md">
+          <ion-label position="floating" color="secondary">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password" class="custom"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <ion-row>
+        <!-- <ion-button mode="ios" type="submit" expand="block">Inicia sesión</ion-button> -->
+        <ion-button mode="ios" type="submit" expand="block" [disabled]="!loginForm.valid" >Acceder</ion-button>
+      </ion-row>
+    </form>
+    
+
+    <ion-row class="bottom-16"> 
+      <span>¿No tienes cuenta?</span>
+      <ion-button mode="ios" fill="clear" (click)="changeOptionView('registryView')">Crear Cuenta</ion-button>
+    </ion-row>
+
+    <app-sign-in *ngIf=" stepView === 'registryView' " 
+                [stepView]="stepView"
+                (backStepView)="stepView = $event"></app-sign-in>
+    
+    <ion-row>
+      <ion-button fill="clear" (click)="backToInitView()">Regresar</ion-button>
+    </ion-row>
+    
+</ion-grid>
+

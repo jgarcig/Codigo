@@ -1,0 +1,107 @@
+<ion-grid  id="loder" *ngIf="isLoading">
+  <ion-spinner name="dots" color="secondary"></ion-spinner>
+</ion-grid>
+
+<ion-grid *ngIf="!isLoading" fixed>
+
+  <form [formGroup]="personalDataForm" (ngSubmit)="submitPersonalDataForm()">
+
+    <ion-row>
+      <h4>Información Personal</h4>
+    </ion-row>
+    <ion-row>
+      <span>
+        Tus datos deben ser los mismos que
+        aparecen en tu identificación oficial.
+      </span>
+    </ion-row>
+
+    <ion-list>
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Nombre(s)</ion-label>
+        <ion-input formControlName="name" type="text" class="custom"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Primer Apellido</ion-label>
+        <ion-input formControlName="surname" type="text" class="custom"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Segundo Apellido</ion-label>
+        <ion-input formControlName="secondSurname" type="text" class="custom"></ion-input>
+      </ion-item>
+
+      <!-- falta el fecha nacimiento -->
+      <ion-item id="dateModal" mode="md" fill="outline">
+        <ion-label position="floating">Fecha de Nacimiento</ion-label>
+        <ion-input value="{{ date | date: 'dd/MM/yyyy' }}" formControlName="dateBirth"></ion-input>
+        <ion-icon slot="end" name="calendar" mode="md"></ion-icon>
+        <ion-modal trigger="dateModal" [cssClass]="'bottom-end'">
+          <ng-template>
+            <ion-datetime formControlName="dateBirth" presentation="date" size="cover" [(ngModel)]="date"
+              [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <!-- aqui termina -->
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Numero Celular</ion-label>
+        <ion-input formControlName="phoneNumber" type="number" class="custom" placeholder="Numero Celular"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">Genero</ion-label>
+        <ion-select formControlName="gender" interface="popover" color="secondary">
+          <ion-select-option value="Femenino" color="secondary">Femenino</ion-select-option>
+          <ion-select-option value="Masculino" color="secondary">Masculino</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <!-- informacion fiscal -->
+    <ion-row>
+      <h4>Información Fiscal</h4>
+    </ion-row>
+    <ion-row>
+      <span>
+        Requerimos que esta información sea
+        precisa para poder generar las
+        constancias fiscales y retener los
+        impuestos de forma adecuada.
+      </span>
+    </ion-row>
+
+    <ion-list>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">País de Residencia Fiscal</ion-label>
+        <ion-select formControlName="contryTax" interface="popover" color="secondary">
+          <ion-select-option value="Persona Moral">México</ion-select-option>
+          <ion-select-option value="Persona Física">Estados Unidos</ion-select-option>
+          <ion-select-option value="Otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">RFC con Homoclave</ion-label>
+        <ion-input formControlName="rfc" type="text" class="custom"></ion-input>
+      </ion-item>
+
+      <ion-item mode="md" fill="outline">
+        <ion-label position="floating">¿Eres habitante de EUA?</ion-label>
+        <ion-select formControlName="UScitizen" interface="popover">
+          <ion-select-option value="Si">Si</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <section>
+      <ion-button shape="round"  type="submit" [disabled]="personalDataForm.valid">Siguiente</ion-button>
+    </section>
+
+  </form>
+</ion-grid>

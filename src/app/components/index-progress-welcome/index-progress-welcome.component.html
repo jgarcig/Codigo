@@ -1,0 +1,194 @@
+
+<ion-grid *ngIf=" dataRedux === null ">
+
+  <ion-row (click)="navigateToForm('personal')">
+    <div class="active">
+      <span class="index-col"> 1 </span>
+      <span class="m-l-8"> Datos Personales </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 2 </span>
+      <span class="m-l-8"> Domicilio </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 3 </span>
+      <span class="m-l-8"> Actividad Económica </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 4 </span>
+      <span class="m-l-8"> Documentos </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 5 </span>
+      <span class="m-l-8"> Confirmación </span>
+    </div>
+  </ion-row>
+
+</ion-grid>
+
+<ion-grid *ngIf=" indexFormStatus === 'personalCompleted' ">
+
+  <ion-row >
+    <div class="pressed">
+      <span class="index-col-pressed"> 1 </span>
+      <span class="m-l-8"> Datos Personales </span>
+    </div>
+  </ion-row>
+
+  <ion-row (click)="navigateToForm('address')">
+    <div class="active">
+      <span class="index-col"> 2 </span>
+      <span class="m-l-8"> Domicilio </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 3 </span>
+      <span class="m-l-8"> Actividad Económica </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 4 </span>
+      <span class="m-l-8"> Documentos </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 5 </span>
+      <span class="m-l-8"> Confirmación </span>
+    </div>
+  </ion-row>
+
+</ion-grid>
+
+<ion-grid *ngIf=" indexFormStatus === 'addressCompleted' ">
+
+  <ion-row>
+    <div class="pressed">
+      <span class="index-col-pressed"> 1 </span>
+      <span class="m-l-8"> Datos Personales </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="pressed">
+      <span class="index-col-pressed"> 2 </span>
+      <span class="m-l-8"> Domicilio </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="active" (click)="navigateToForm('finance')">
+      <span class="index-col"> 3 </span>
+      <span class="m-l-8"> Actividad Económica </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 4 </span>
+      <span class="m-l-8"> Documentos </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 5 </span>
+      <span class="m-l-8"> Confirmación </span>
+    </div>
+  </ion-row>
+
+</ion-grid>
+
+<ion-grid *ngIf=" indexFormStatus === 'financeCompleted' ">
+  <ion-row>
+    <div class="pressed">
+      <span class="index-col-pressed"> 1 </span>
+      <span class="m-l-8"> Datos Personales </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="pressed">
+      <span class="index-col-pressed"> 2 </span>
+      <span class="m-l-8"> Domicilio </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="pressed" >
+      <span class="index-col-pressed"> 3 </span>
+      <span class="m-l-8"> Actividad Económica </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="active" (click)="navigateToForm('documents')">
+      <span class="index-col"> 4 </span>
+      <span class="m-l-8"> Documentos </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="inactive">
+      <span class="index-col-inactive"> 5 </span>
+      <span class="m-l-8"> Confirmación </span>
+    </div>
+  </ion-row>
+
+</ion-grid>
+
+<ion-grid *ngIf=" indexFormStatus === 'documentsCompleted' ">
+  <!-- <ion-grid *ngIf=" dataRedux === null "> -->
+  <ion-row>
+    <div class="pressed">
+      <span class="index-col-pressed"> 1 </span>
+      <span class="m-l-8"> Datos Personales </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="pressed">
+      <span class="index-col-pressed"> 2 </span>
+      <span class="m-l-8"> Domicilio </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="pressed" >
+      <span class="index-col-pressed"> 3 </span>
+      <span class="m-l-8"> Actividad Económica </span>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="pressed">
+      <span class="index-col-pressed"> 4 </span>
+      <span class="m-l-8"> Documentos </span>
+    </div>
+  </ion-row>
+
+  <ion-row (click)="navigateToForm('confirm')">
+    <div class="active">
+      <span class="index-col"> 5 </span>
+      <span class="m-l-8"> Confirmación </span>
+    </div>
+  </ion-row>
+
+</ion-grid>

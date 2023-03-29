@@ -1,0 +1,54 @@
+<ion-grid *ngIf="isLoading">
+  <ion-spinner name="dots" color="secondary"></ion-spinner>
+</ion-grid>
+
+<ion-grid *ngIf="!isLoading">
+
+  <form [formGroup]="addressForm" (ngSubmit)="submitAddressDataForm()"> 
+
+    <ion-row> 
+      <h2>Dirección</h2>
+      <span>
+          Ingresa la información de tu domicilio actual.
+      </span>
+    </ion-row>
+
+    <ion-list>
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">País</ion-label>
+        <ion-input formControlName="country" type="text" class="custom" placeholder="País"></ion-input>
+      </ion-item>
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Código Postal</ion-label>
+        <ion-input formControlName="zipCode" type="number" class="custom" placeholder="Código Postal"></ion-input>
+      </ion-item>
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Estado</ion-label>
+        <ion-input formControlName="state" type="text" class="custom" placeholder="Estado"></ion-input>
+      </ion-item>
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Población / Ciudad</ion-label>
+        <ion-input formControlName="city" type="text" class="custom" placeholder="Población / Ciudad"></ion-input>
+      </ion-item>
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Colonia</ion-label>
+        <ion-input formControlName="suburb" type="text" class="custom" placeholder="Colonia"></ion-input>
+      </ion-item>
+      <ion-item mode="md">
+        <ion-label position="floating" color="secondary">Alcaldía / Municipio</ion-label>
+        <ion-input formControlName="townhall" type="text" class="custom" placeholder="Alcaldía / Municipio"></ion-input>
+    </ion-item>
+    <ion-item mode="md">
+      <ion-label position="floating" color="secondary">Calle</ion-label>
+      <ion-input formControlName="street" type="text" class="custom" placeholder="Calle"></ion-input>
+  </ion-item>
+    </ion-list>
+
+    <section>
+      <ion-button mode="ios" type="submit" expand="block" >Aceptar</ion-button>
+      <!-- <ion-button mode="ios" type="submit" expand="block" [disabled]="!addressForm.valid">Aceptar</ion-button> -->
+    </section>
+
+  </form>
+
+</ion-grid>

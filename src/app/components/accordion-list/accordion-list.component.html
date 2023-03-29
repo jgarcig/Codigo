@@ -1,0 +1,176 @@
+
+<ion-grid class="accordion-container" (click)="toggleAccordion()" [ngClass]="detailOpened ? 'open' : ''">
+
+  <ion-row class="header bottom-16">
+    <ion-col size="10">
+      <span *ngIf="objPersonalInp">Datos Personales</span>
+      <span *ngIf="objAddressInp">Domicilio</span>
+      <span *ngIf="objFinanceInp">Actividad Económica</span>
+      <span *ngIf="objDcumentsInp">Documentos</span>
+    </ion-col>
+    <ion-col size="2" class="icon">
+      <ion-icon name="add" color="primary" *ngIf="!detailOpened"></ion-icon>
+      <ion-icon name="remove" color="primary" *ngIf="detailOpened"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <div class="content" *ngIf="objPersonalInp">
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>NOMBRE(S)</p>
+        <h1>{{objPersonalInp.name}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>FECHA DE NACIMIENTO</p>
+        <h1>{{objPersonalInp.dateBirth}}</h1>
+      </ion-label>
+    </ion-row>
+    
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>PAÍS</p>
+        <h1>{{objPersonalInp.contryTax}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>PRIMER APELLIDO</p>
+        <h1>{{objPersonalInp.surname}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>GÉNERO</p>
+        <h1>{{objPersonalInp.gender}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>RFC CON HOMOCLAVE</p>
+        <h1>{{objPersonalInp.rfc}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>SEGUNDO APELLIDO</p>
+        <h1>{{objPersonalInp.secondSurname}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>NO. CELULAR</p>
+        <h1>{{objPersonalInp.phoneNumber}}</h1>
+      </ion-label>
+    </ion-row>
+    
+  </div>
+
+  <div class="content" *ngIf="objAddressInp">
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>CALLE</p>
+        <h1>{{objAddressInp.street}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>COLONIA</p>
+        <h1>{{objAddressInp.suburb}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>CIUDAD</p>
+        <h1>{{objAddressInp.city}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>ALCALDIA</p>
+        <h1>{{objAddressInp.townhall}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>ESTADO</p>
+        <h1>{{objAddressInp.state}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>CÓDIGO POSTAL</p>
+        <h1>{{objAddressInp.zipCode}}</h1>
+      </ion-label>
+    </ion-row>
+
+  </div>
+
+  <div class="content" *ngIf="objFinanceInp">
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>SUELDO ANUAL NETO</p>
+        <h1>{{objFinanceInp.salary}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>OCUPACIÓN</p>
+        <h1>{{objFinanceInp.occupation}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>NOMBRE DE LA EMPRESA</p>
+        <h1>{{objFinanceInp.jobName}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>GIRO DE LA EMPRESA</p>
+        <h1>{{objFinanceInp.jobActivity}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>RANGO DEL PUESTO</p>
+        <h1>{{objFinanceInp.seniority}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>ANTIGÜEDAD</p>
+        <h1>{{objFinanceInp.jobExperience}}</h1>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="bottom-8">
+      <ion-label>
+        <p>¿CARGOS PÚBLICOS DESEMPEÑADOS?</p>
+        <h1>{{objFinanceInp.publicCharges}}</h1>
+      </ion-label>
+    </ion-row>
+
+  </div>
+
+</ion-grid>

@@ -1,0 +1,103 @@
+
+<ion-grid *ngIf="isLoading">
+  <ion-spinner name="dots" color="secondary"></ion-spinner>
+</ion-grid>
+
+<ion-grid *ngIf="!isLoading">
+
+  <section *ngIf="formFactorView === 'phoneVerification' ">
+
+    <ion-row class="bottom-16"> 
+      <span>
+        <strong style="color:black">Doble factor de verificación</strong> 
+      </span>
+    </ion-row>
+    <ion-row class="bottom-16"> 
+      <span style="color: #5d5d5d;">Verificación SMS</span>
+    </ion-row>
+    <ion-row class="bottom-16"> 
+      <span style="color:black" class="small-txt">  
+        Ingresa el código de activación que enviamos por <br> SMS a tu celular dado de alta previamente.
+      </span>
+    </ion-row>
+
+    <ion-row class="bottom-16" (focusin)="focusDetect($event)">
+      <code-input [isCodeHidden]="false"
+                  [codeLength]="6"
+                  (codeChanged)="onCodeChanged($event)"
+                  (codeCompleted)="onCodeCompleted($event)">
+      </code-input>
+    </ion-row>
+
+    <ion-row id="clic-row" (click)="resendCode()"> 
+      <span class="blue-txt-tsm"> ¿No recibiste ningún código? </span>
+      <span class="gray-txt-tsm"> Enviar de nuevo </span>
+    </ion-row>
+
+    <ion-row>
+      <ion-button shape="round" *ngIf="!btnEnable" mode="ios"expand="block" disabled>Confirmar</ion-button>
+      <ion-button shape="round" *ngIf="btnEnable" mode="ios"expand="block" (click)="confirmCode()">Confirmar</ion-button>
+    </ion-row>
+
+  </section>
+
+  <section id="doble-factor" *ngIf="formFactorView === 'waitingVerification' ">
+    <ion-row class="bottom-16"> 
+      <span>
+        <strong>
+          ¡Excelente! Ahora <br> verifica tu cuenta 
+        </strong>
+      </span>
+    </ion-row>
+    <ion-row class="bottom-16">
+      <span>
+        Se envió un email al correoelectrónico que <br> proporcionaste para que verifiques tu cuenta <br> para puedas ingresar a la plataforma.
+      </span>
+    </ion-row>
+
+    <ion-row>
+      <!-- <ion-button mode="ios" expand="block" (click)="signUpCompleted()">Aceptar</ion-button> -->
+      <ion-button shape="round" *ngIf="!btnEnable" mode="ios"expand="block" disabled>Aceptar</ion-button>
+      <ion-button shape="round" *ngIf="btnEnable" mode="ios"expand="block" (click)="signUpCompleted()">Aceptar</ion-button>
+    </ion-row>
+
+  </section>
+
+  <section *ngIf="formFactorView === 'emailVerification' ">
+
+    <ion-row class="bottom-16"> 
+      <span>
+        <strong style="color:black">Doble factor de verificación</strong> 
+      </span>
+    </ion-row>
+    <ion-row class="bottom-16"> 
+      <span style="color: #5d5d5d;">Verificación Correo Electrónico</span>
+    </ion-row>
+    <ion-row class="bottom-16"> 
+      <span class="small-txt">  
+        Ingresa el código de activación que <br> enviamos al correo electrónico <br> con el que creaste la cuenta.
+      </span>
+    </ion-row>
+
+    <ion-row class="bottom-16" (focusin)="focusDetect($event)">
+      <code-input [isCodeHidden]="false"
+                  [codeLength]="6"
+                  (codeChanged)="onCodeChanged($event)"
+                  (codeCompleted)="onCodeCompleted($event)">
+      </code-input>
+    </ion-row>
+
+    <ion-row id="clic-row" (click)="resendCode()"> 
+      <span class="blue-txt-tsm"> ¿No recibiste ningún código? </span>
+      <span class="gray-txt-tsm"> Enviar de nuevo </span>
+    </ion-row>
+
+    <ion-row>
+      <!-- <ion-button mode="ios"expand="block" (click)="loginCompleted()">Confirmar</ion-button> -->
+      <ion-button *ngIf="!btnEnable" mode="ios"expand="block" disabled>Confirmar</ion-button>
+      <ion-button *ngIf="btnEnable" mode="ios" expand="block" (click)="loginCompleted()">Confirmar</ion-button>
+    </ion-row>
+
+  </section>
+  
+</ion-grid>

@@ -1,0 +1,64 @@
+.load-contain {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 0;
+
+    ion-spinner{
+        height: 100%;
+    }
+}
+
+form{
+    height: 100%;
+    
+    h2, span{
+        color: var(--ion-color-medium-shade);
+    }
+
+    ion-grid.top {
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 0;
+
+        ion-row{
+            width: 100%;
+
+            ion-item{
+
+                ion-checkbox{
+                    margin: -16px;
+                }
+                
+                span{
+                    color: #000;
+                    font-size: 16px;
+                    margin-left: 32px;
+
+                    a{
+                        color: var(--ion-color-secondary);
+                    }
+                }
+            }
+        }
+    
+    }
+    
+    ion-grid.bottom{
+        height: 50%;
+        display: flex;
+        align-items: flex-end;
+        position: sticky;
+        bottom: 32px;
+        padding-left: 32px;
+        padding-right: 32px;
+    
+        ion-button{
+            margin: 0;
+            width: 100%;
+        }
+    }
+}
+
+

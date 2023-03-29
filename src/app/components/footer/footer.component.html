@@ -1,0 +1,41 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="5">
+      <!--<nav>
+            <a routerLink="/terms-and-conditions" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Terminos y Condiciones</a> |
+            <a routerLink="/notice-of-privacy" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Aviso de Privacidad</a> |
+            <a routerLink="/legal-warning" routerLinkActive="active" ariaCurrentWhenActive="page">Aviso Legal</a>
+            <router-outlet></router-outlet>
+          </nav>-->
+      <ion-list lines="inset">ai/digital</ion-list>
+      <ion-list>
+        <span (click)="navigateRoute('terms-and-conditions')" style="cursor: pointer;">Terminos y Condiciones</span><span> | </span>
+        <span (click)="navigateRoute('notice-of-privacy')" style="cursor: pointer;">Aviso de Privacidad</span><span> | </span>
+        <span (click)="navigateRoute('legal-warning')" style="cursor: pointer;">Aviso Legal</span>
+      </ion-list>
+      <ion-list lines="inset">© 2022 ai/digital Centro de la Ciudad de México Área 5. 0650. 55.5512-0926</ion-list>
+    </ion-col>
+
+    <ion-col size="1">
+      <ion-list lines="inset" (click)="navigateRoute('facebook')"><ion-icon name="logo-facebook" size="large" style="cursor: pointer;"></ion-icon></ion-list>
+      <ion-list lines="inset" (click)="navigateRoute('instagram')"><ion-icon name="logo-instagram" size="large" style="cursor: pointer;"></ion-icon></ion-list>
+      <ion-list lines="inset" (click)="navigateRoute('twitter')"><ion-icon name="logo-twitter" size="large" style="cursor: pointer;"></ion-icon></ion-list>
+    </ion-col>
+
+    <ion-col size="3.5">
+      <ion-list lines="inset">Informacion Corporativa</ion-list>
+      <ion-list lines="inset" style="cursor: pointer;">Acerca de ai/digital</ion-list>
+      <ion-list lines="inset" style="cursor: pointer;">Educacion Financiera</ion-list>
+      <ion-list lines="inset" style="cursor: pointer;">Notas para inversionistas</ion-list>
+      <ion-list lines="inset" style="cursor: pointer;">Diccionario financiero</ion-list>
+    </ion-col>
+
+    <ion-col size="2.5">
+      <ion-list lines="inset">Centro de Ayuda</ion-list>
+      <ion-list lines="inset" style="cursor: pointer;">Consultas: hola@aidigital.mx</ion-list>
+      <ion-list lines="inset" style="cursor: pointer;">Aclaraciones: ayuda@aidigital.mx</ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

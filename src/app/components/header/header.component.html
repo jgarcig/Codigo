@@ -1,0 +1,32 @@
+
+<ion-grid>
+  <ion-row>
+    <ion-col name="principal">
+      <div class="angle-first">
+        <img src="\assets\images\logo-color.png">
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="angle-second">
+        <span (click)="navigateRoute('home')">Inicio</span>
+      </div>
+    </ion-col>
+    <ion-col>
+      <span (click)="navigateRoute('home')">Nosotros</span>
+    </ion-col>
+    <ion-col>
+      <span (click)="navigateRoute('home')">Fondos de Inversión</span>
+    </ion-col>
+    <ion-col>
+      <ion-button fill="outline" shape="round"  color="ligth" mode="ios" (click)="navigateRoute('home')">Demo</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button shape="round" color="tertiary" mode="ios" (click)="navigateRoute('login')">Iniciar Sesión</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button fill="clear" mode="ios" (click)="navigateRoute('registry')">
+        <ion-icon name="add-outline"></ion-icon> &nbsp; Registrarse
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

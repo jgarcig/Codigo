@@ -1,0 +1,62 @@
+<ion-grid id="loder" *ngIf="isLoading">
+  <ion-spinner name="dots" color="secondary"></ion-spinner>
+</ion-grid>
+
+<ion-grid *ngIf="!isLoading" fixed>
+  <form [formGroup]="documentsDataForm">
+    <ion-row>
+      <h4>Validación de Documentos</h4>
+    </ion-row>
+    <ion-row>
+      <span>Te recomendamos leer los requisitos de los documentos para que no sean rechazados</span>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <strong>Selfie</strong>
+        <ion-icon name="help-outline"></ion-icon>
+        <span>¿Cómo debo tomarla?</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-button shape="round" fill="outline" size="large">Tomar selfie</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <strong>Validación Documento Oficial Vigente</strong>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="help-outline"></ion-icon>
+        <span>¿Cómo debe ser el documento?</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>INE</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>Pasaporte</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button shape="round" fill="outline" size="large">Adjuntar frente</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button shape="round" fill="outline" size="large">Adjuntar reverso</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>Acepto que se revisarán y transmitirán los datos a secretaría gubernamental para
+          validarlos</ion-label>
+      </ion-item>
+    </ion-row>
+  </form>
+</ion-grid>

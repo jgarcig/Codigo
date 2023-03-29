@@ -1,0 +1,31 @@
+
+ion-content{
+
+    ion-grid{
+        height: 100%;
+        padding-right: 32px;
+        padding-left: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        ion-row{
+            text-align: center;
+            h1{
+                color: var(--ion-color-primary);
+                font-size: 30px;
+                font-weight: 500;   
+                margin-top: 60px;         
+            }
+            span{
+                margin-top: 16px;       
+                font-size: 25px;
+            }
+        }
+        ion-button{
+            margin-bottom: 32px;
+        }
+    
+    }
+
+}

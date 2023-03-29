@@ -1,0 +1,58 @@
+ion-grid {
+    padding: 0%;
+
+    span{
+        cursor: pointer;
+    }
+    
+    ion-row {
+
+        ion-col {
+            padding: 0%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #20A5FF;
+            color: white;
+        }
+
+        ion-button{
+            color: #fff;
+            
+            ion-icon{
+                font-weight: bold;
+                font-size: 30px;
+            }
+
+        }
+
+    }
+
+
+    .angle-first{
+        border-right: 45px solid #0098ff;
+        border-top: 70px solid white;
+        width: 100%;
+        img{
+            bottom: 20%;
+            left: 10px;
+            width: 150px;
+            position: absolute;
+        }
+    }
+    .angle-second{
+        border-right: 45px solid #20A5FF;
+        border-top: 70px solid #0098ff;
+        width: 100%;
+        span{
+            bottom: 35%;
+            left: 25%;
+            position: absolute;
+        }
+    }
+}
+
+
+
+
+

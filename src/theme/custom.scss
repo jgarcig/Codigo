@@ -1,0 +1,138 @@
+.bottom-32{
+    margin-bottom: 32px;
+}
+.bottom-16{
+    margin-bottom: 16px;
+}
+.bottom-8{
+    margin-bottom: 8px;
+}
+
+.bottom-1{
+    margin-bottom: 1em;
+}
+
+.top-8{
+    margin-top: 8px;
+}
+.top-12{
+    margin-top: 12px;
+}
+.top-16{
+    margin-top: 16px;
+}
+
+.top-48{
+    margin-top: 48px;
+}
+
+.m-l-8{
+    margin-left: 8px;
+}
+
+.small-txt{
+    color: #c7c2c2 !important;
+    font-size: medium !important;
+}  
+
+.blue-txt-tsm{
+    color: var(--ion-color-primary) !important;
+    font-size: small !important;
+    font-style: italic !important;
+}
+
+.txt-subtitle{
+    font-size: 20px;
+    color: var(--ion-color-dark);
+    font-weight: 500;
+}
+
+.gray-txt-tsm{
+    color: #c7c2c2 !important;
+    font-size: small !important;
+    font-style: italic !important;
+}  
+
+.btn-squared{
+    background-color: #20A5FF;
+    width: 168px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+body > app-root > ion-app > ion-router-outlet > app-start > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(1) > input,
+body > app-root > ion-app > ion-router-outlet > app-start > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(2) > input[type=tel],
+body > app-root > ion-app > ion-router-outlet > app-start > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(3) > input[type=tel],
+body > app-root > ion-app > ion-router-outlet > app-start > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(4) > input[type=tel],
+body > app-root > ion-app > ion-router-outlet > app-start > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(5) > input[type=tel],
+body > app-root > ion-app > ion-router-outlet > app-start > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(6) > input[type=tel]{
+    background-color: #fff;
+    font-size: x-large;
+    height: 56px;
+}
+
+ion-spinner {
+    transform: scale(3);
+}
+ion-button.button-disabled {
+    // --opacity: 1;
+    --background: #707070;
+}
+
+@media only screen and (min-width: 768px) and (min-height: 600px) {
+    ion-modal {
+        --top: 354px;
+        --left: 622px;
+        --width: 676px;
+        --height: 369px;
+
+        h1 {
+            margin-left: 3%;
+        }
+
+        ion-button {
+            width: 40%;
+            margin-left: 30%;
+        }
+    }
+}
+@media (min-width:720px){
+   
+    body > app-root > ion-app > ion-router-outlet > app-start-web > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(1) > input[type=tel]{
+        width: 45px;
+        height: 50px;
+    }
+    body > app-root > ion-app > ion-router-outlet > app-start-web > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(1) > input[type=tel]{
+        width: 45px;
+        height: 50px;
+        margin-left: 10%;
+    }
+    body > app-root > ion-app > ion-router-outlet > app-start-web > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(2) > input[type=tel]{
+        width: 45px;
+        height: 50px;
+        margin-left: 20%;
+    }
+    body > app-root > ion-app > ion-router-outlet > app-start-web > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(3) > input[type=tel]{
+        width: 45px;
+        height: 50px;
+        margin-left: 30%;
+    }
+    body > app-root > ion-app > ion-router-outlet > app-start-web > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(4) > input[type=tel]{
+        width: 45px;
+        height: 50px;
+        margin-left: 40%;
+    }
+    body > app-root > ion-app > ion-router-outlet > app-start-web > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(5) > input[type=tel]{
+        width: 45px;
+        height: 50px;
+        margin-left: 50%;
+    }
+    body > app-root > ion-app > ion-router-outlet > app-start-web > ion-content > app-two-factor-auth > ion-grid > section > ion-row:nth-child(4) > code-input > span:nth-child(6) > input[type=tel]{
+        width: 45px;
+        height: 50px;
+        margin-left: 60%;
+    }
+
+}

@@ -1,0 +1,17 @@
+ion-grid {
+    padding: 0;
+    background-color: #20A5FF;
+
+    ion-row {
+        padding: 32px;
+
+        ion-col {
+            padding: 0;
+
+            ion-list {
+                background-color: #20A5FF;
+                color: white;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+
+<ion-grid>
+
+  <ion-row>
+    <ion-title color="primary">{{titleStatus}}</ion-title>
+  </ion-row>
+
+  <ion-row>
+    <span>Estatus:</span>
+  </ion-row>
+
+  <ion-row>
+    <span [ngClass]="{
+      'txt-warning': idStatus === 'revision' || idStatus === 'pending', 
+      'txt-danger': idStatus === 'reject' } "> 
+      {{statusText}}
+    </span>
+  </ion-row>
+
+  <ion-row *ngIf="idStatus === 'revision'">
+    <p>
+      Hemos recibido con éxito la información que nos enviaste y estamos verificando que sea correcta. Puede tardar hasta un máximo de 3 días hábiles.
+    </p>
+  </ion-row>
+
+  <ion-row *ngIf="idStatus === 'reject'">
+    <p>
+      Se ha rechazado la información que nos compartiste por el siguiente motivo:
+    </p>
+
+    <div class="list-contain" >
+      <span *ngFor="let item of descriptionList">{{item.description}} <br> </span>
+    </div>
+
+    <ion-button mode="ios" expand="block">Corregir Información</ion-button>
+
+    <span class="blue-txt-tsm">
+      Solamente te quedan dos intentos más. Si se terminan los intentos deberás contactar a un asesor para que te ayude a concluir con el proceso.
+    </span>
+
+  </ion-row>
+
+  <ion-row *ngIf="idStatus === 'pending'">
+    <span class="txt-subtitle">¡Ya casi terminamos!</span>
+    <p>
+      Por último, necesitamos que firmes el contrato que se ha enviado al mail que nos compartiste al crear tu cuenta para que puedas empezar a invertir.
+    </p>
+  </ion-row>
+
+  <ion-row class="bottom">
+    <div>
+      <span>
+        Si tienes alguna duda o problema con la validación de la información, contacta a nuestro servicio a clientes con el número 55-2122-2221 ext. 221 o manda un email a ayuda@aidigital.com
+      </span>
+    </div>
+  </ion-row>
+
+</ion-grid>
+

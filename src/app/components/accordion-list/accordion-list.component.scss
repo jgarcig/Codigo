@@ -1,0 +1,49 @@
+
+ion-grid,
+ion-col{
+    padding: 0;
+}
+
+ion-row.header{
+    background-color: #f8fcff;
+    height: 51px;
+    align-content: center;
+    border-radius: 26px;
+
+    ion-col{
+        span{
+            color: var(--ion-color-primary);
+            font-size: 24px;
+            margin-left: 16px;
+        }
+        ion-icon{
+            font-size: 24px;
+        }
+    }
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+div > ion-row > ion-label{
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+.accordion-container {
+  display: block;
+  position: relative;
+  background: white;
+}
+
+.accordion-container .content {
+  display: none;
+}
+
+.accordion-container.open .content {
+    display: block;
+    margin-top: -8px;
+    margin-bottom: 32px;
+}

@@ -1,0 +1,90 @@
+<ion-grid *ngIf="isLoading">
+    <ion-spinner name="dots" color="secondary"></ion-spinner>
+</ion-grid>
+
+<ion-grid *ngIf="!isLoading">
+  
+    <form [formGroup]="personalDtaForm" (ngSubmit)="submitPersonalDataForm()">
+        <ion-row> 
+            <h2>Información Personal</h2>
+            <span>
+                Tus datos deben ser los mismos que <br>
+                aparecen en tu identificación oficial.
+            </span>
+        </ion-row>
+
+        <ion-list>
+            <ion-item mode="md">
+                <ion-input formControlName="name" type="text" class="custom" placeholder="Nombre(s)"></ion-input>
+            </ion-item>
+            <ion-item mode="md">
+                <ion-input formControlName="surname" type="text" class="custom" placeholder="Primer Apellido"></ion-input>
+            </ion-item>
+            <ion-item mode="md">
+                <ion-input formControlName="secondSurname" type="text" class="custom" placeholder="Segundo Apellido"></ion-input>
+            </ion-item>
+        
+            <ion-item id="dateModal" mode="md">
+                <ion-label position="floating" color="secondary">Fecha de Nacimiento</ion-label>
+                <ion-input value="{{ date | date: 'dd/MM/yyyy' }}" formControlName="dateBirth"></ion-input>
+                <ion-icon slot="end" name="calendar" color="secondary" mode="md"></ion-icon>
+                <ion-modal trigger="dateModal" [cssClass]="'bottom-end'">
+                    <ng-template>
+                      <ion-datetime formControlName="dateBirth" presentation="date" size="cover"
+                                    [(ngModel)]="date" [showDefaultButtons]="true"></ion-datetime>
+                    </ng-template>
+                </ion-modal>
+            </ion-item>
+
+
+            <ion-item mode="md">
+                <ion-input formControlName="phoneNumber" type="number" class="custom" placeholder="No. Celular"></ion-input>
+            </ion-item>
+            <ion-item mode="md">
+                <ion-select formControlName="gender" placeholder="Genero" interface="popover" color="secondary">
+                    <ion-select-option value="Femenino" color="secondary">Femenino</ion-select-option>
+                    <ion-select-option value="Masculino" color="secondary">Masculino</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+
+        <ion-row> 
+            <h2>Información Fiscal</h2>
+            <span>
+                Requerimos que esta información sea<br>
+                precisa para poder generar las <br>
+                constancias fiscales y retener los<br>
+                impuestos de forma adecuada.
+            </span>
+        </ion-row>
+
+        <ion-list>
+
+            <ion-item mode="md">
+                <ion-select formControlName="contryTax" placeholder="País de Residencia Fiscal" interface="popover" color="secondary">
+                    <ion-select-option value="Persona Moral" color="secondary">México</ion-select-option>
+                    <ion-select-option value="Persona Física" color="secondary">Estados Unidos</ion-select-option>
+                    <ion-select-option value="Otro" color="secondary">Otro</ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item mode="md">
+                <ion-input formControlName="rfc" type="text" class="custom" placeholder="RFC con Homoclave"></ion-input>
+            </ion-item>
+
+            <ion-item mode="md">
+                <ion-select formControlName="UScitizen" placeholder="¿Eres habitante de EUA?" interface="popover" color="secondary">
+                    <ion-select-option value="Si" color="secondary">Si</ion-select-option>
+                    <ion-select-option value="No" color="secondary">No</ion-select-option>
+                </ion-select>
+            </ion-item>
+            
+        </ion-list>
+
+        <section>
+            <ion-button mode="ios" type="submit" expand="block" >Aceptar</ion-button>
+            <!-- <ion-button mode="ios" type="submit" expand="block" [disabled]="!personalDtaForm.valid">Aceptar</ion-button> -->
+        </section>
+    </form>
+  
+</ion-grid>

@@ -1,0 +1,40 @@
+<ion-grid id="loder" *ngIf="isLoading">
+  <ion-spinner name="dots" color="secondary"></ion-spinner>
+</ion-grid>
+
+<ion-grid *ngIf="!isLoading" fixed>
+  <form [formGroup]="confirmDataForm" (ngSubmit)="submitConfirmDataForm">
+    <ion-row>
+      <h4>Resumen</h4>
+    </ion-row>
+    <ion-row>
+      <span>Revisa que hayas ingresado correctamente tu información</span>
+    </ion-row>
+    <app-accordion-list [objPersonalInp]="dataPersonal"></app-accordion-list>
+    <app-accordion-list [objAddressInp]="dataAddress"></app-accordion-list>
+    <app-accordion-list [objFinanceInp]="dataFinance"></app-accordion-list>
+    <app-accordion-list [objDcumentsInp]="dataDocuments"></app-accordion-list>
+    <ion-row>
+      <ion-item>
+        <ion-checkbox slot="start" mode="md" formControlName="privacyAccept"
+          (ionChange)="detectChange($event, 0)"></ion-checkbox>
+        <span>Acepto<a href="https://www.ari.group/aviso-de-privacidad" target="_blank">
+            Aviso de Privacidad</a>
+        </span>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-checkbox slot="start" mode="md" formControlName="termsAccept"
+          (ionChange)="detectChange($event, 1)"></ion-checkbox>
+        <span>Acepto<a href="https://www.ari.group/aviso-de-privacidad" target="_blank">
+            Términos y Condiciones
+          </a>
+        </span>
+      </ion-item>
+    </ion-row>
+    <section>
+      <ion-button mode="ios" type="submit" [disabled]="confirmDataForm.valid">Aceptar</ion-button>
+    </section>
+  </form>
+</ion-grid>

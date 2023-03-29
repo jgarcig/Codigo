@@ -1,0 +1,77 @@
+ion-content {
+    --offset-bottom: auto !important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    ion-grid {
+        padding: 0;
+        width: 100%;
+
+        ion-row {
+            padding-left: 40px;
+            padding-right: 32px;
+            ion-col {
+                padding: 0;
+                div {
+                    height: 320px;
+                    margin-right: 32px;
+                }
+            }
+
+        }
+        strong{
+            font-size: 30px;
+            span{
+                color: var(--ion-color-blue-btn);
+            }
+        }
+    }
+
+    ion-row.imgheader{
+        background-image: url("https://topesdegama.com/app/uploads-topesdegama.com/2022/05/ordenadores-porta%CC%81tiles.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 25em;
+        width: 100%;
+
+        ion-col{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            ion-row{
+    
+                .container{
+                    background-color: #FFF;
+                    width: 500px;
+                    height: 250px;
+                    padding-left: 32px;
+                    padding-right: 32px;
+                    padding-top: 16px;
+                    padding-bottom: 16px;
+
+                    strong:nth-child(1),
+                    strong:nth-child(3)
+                    {
+                        font-size: 30px;
+                        
+                    }
+                    h4 > strong{
+                        font-size: 20px;
+                    }
+                }
+                
+                 div.container > strong:nth-child(3){
+                     color: var(--ion-color-blue-btn);
+                 }
+
+            }
+        }
+    }
+
+}
+
+

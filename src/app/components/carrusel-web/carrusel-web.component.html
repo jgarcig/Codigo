@@ -1,0 +1,48 @@
+
+  <ion-grid >
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <div (click)="btnAtras()" style=" cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        height: 50%;">
+          <ion-icon name="chevron-back-outline" color="primary"></ion-icon>
+        </div>
+        <div (click)="btnNext()" style="position: absolute;
+        cursor: pointer;
+        bottom: 0;
+        height: 50%;
+        right: 1px;">
+          <ion-icon name="chevron-forward-outline" color="primary"></ion-icon>
+        </div>
+        <!--carrusel-->
+        <ion-slides #slider [options]="slideOpts">
+          <ion-slide *ngFor='let item of carrusel'>
+              
+                  <ion-card>
+      
+                    <div style="height: 50%;">
+                      <img [src]="item.image">
+                    </div>
+      
+                    <div style="height: 65%;">
+                      <ion-card-header>
+                        <ion-card-title>
+                          {{item.titulo}}
+                        </ion-card-title>
+                      </ion-card-header>
+                      <ion-card-content>
+                        {{item.descripcion}}
+                      </ion-card-content>
+                      <h5 (click)="detalleCarrusel(item)">Ir ahora</h5>
+                    </div>
+                  </ion-card>
+          </ion-slide>
+        </ion-slides>
+      
+      </ion-col>
+    </ion-row>
+    
+    
+  </ion-grid>
+

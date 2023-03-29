@@ -1,0 +1,31 @@
+
+<ion-content class="background" scroll-y="false">
+
+  <ion-grid *ngIf="statusRegistry !== 'confirmDoctosSend' ">
+    <ion-row class="portrait"></ion-row>
+
+    <ion-row>
+      <h1>Bienvenido</h1>
+    </ion-row>
+
+    <ion-row>
+      <span>
+        Antes de comenzar a invertir es indispensable 
+        que nos compartas la siguiente información para 
+        que podamos darte de alta como cliente y 
+        validar tu información.
+      </span>
+    </ion-row>
+
+    <app-index-progress-welcome></app-index-progress-welcome>
+  </ion-grid>
+
+
+  <ion-grid *ngIf="statusRegistry === 'confirmDoctosSend' ">
+    <ion-row class="portrait"></ion-row>
+
+    <app-validation-progress></app-validation-progress>
+
+  </ion-grid>
+
+</ion-content>
